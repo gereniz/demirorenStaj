@@ -22,7 +22,7 @@ namespace DemirorenBlog.Api.Controllers
         }
 
         [HttpPost]
-        public bool Create(PostViewModel model)
+        public bool Create([FromBody] PostViewModel model)
         {
 
 
