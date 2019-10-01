@@ -69,5 +69,26 @@ namespace DemirorenBlog.Api.Controllers
 
             }
         }
+
+        [Route("api/[controller]/[action]/ {id}")]
+        [HttpPut("{id}")]
+
+        public bool Update(int id, [FromBody] CategoryVievModel model)
+        {
+
+            var categories = _domainContext.Categories.FirstOrDefault(p => p.Id == id);
+            if (model == null)
+            {
+                return false;
+            }
+            else
+            {
+                categories.Name = model.Name;
+
+                _domainContext.SaveChanges();
+                return true;
+            }
+
+        }
     }
 }
