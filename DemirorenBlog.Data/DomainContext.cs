@@ -14,7 +14,8 @@ namespace DemirorenBlog.Data
 
         public DbSet <Users> Users { get; set; }
         public DbSet <Posts> Posts{ get; set; }
-
+        
+        public DbSet <Category> Categories { get; set; }
 
     }
 }
