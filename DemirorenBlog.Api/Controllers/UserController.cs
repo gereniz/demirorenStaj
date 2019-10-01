@@ -2,10 +2,8 @@
 using DemirorenBlog.Data;
 using DemirorenBlog.Domains.Domain;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace DemirorenBlog.Api.Controllers
 {
@@ -74,8 +72,5 @@ namespace DemirorenBlog.Api.Controllers
                 return true;
             }
         }
-
-
-
     }
 }
