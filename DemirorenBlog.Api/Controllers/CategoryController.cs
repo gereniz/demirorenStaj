@@ -65,6 +65,8 @@ namespace DemirorenBlog.Api.Controllers
                 _domainContext.Categories.Remove(model);
                 _domainContext.SaveChanges();
                 return true;
+
+
             }
         }
     }
