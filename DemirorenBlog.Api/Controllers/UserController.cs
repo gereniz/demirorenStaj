@@ -18,9 +18,9 @@ namespace DemirorenBlog.Api.Controllers
 
             _domainContext = domainContext;
         }
-
+       
         [HttpPost]
-        public bool Create(UserViewModel model)
+        public bool Create( [FromBody] UserViewModel model)
         {
             var user = new Users();
             user.Name = model.Name;
