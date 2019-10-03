@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DemirorenBlog.Api.Models;
 using DemirorenBlog.Api.Models.CategoryModels;
 using DemirorenBlog.Data;
 using DemirorenBlog.Domains.Domain;
@@ -70,23 +71,26 @@ namespace DemirorenBlog.Api.Controllers
             }
         }
 
-        [Route("api/[controller]/[action]/ {id}")]
+        [Route("api/[controller]/[action]/{id}")]
         [HttpPut("{id}")]
 
-        public bool Update(int id, [FromBody] CategoryVievModel model)
+        public ResponseModel Update(int id, [FromBody] CategoryVievModel model)
         {
-
+            var result = new ResponseModel ();
             var categories = _domainContext.Categories.FirstOrDefault(p => p.Id == id);
-            if (model == null)
+            if (categories == null)
             {
-                return false;
+                result.Success = false;
+                result.Message = "Lütfen geçerli bir kategori giriniz";
+                return result;
             }
             else
             {
                 categories.Name = model.Name;
 
                 _domainContext.SaveChanges();
-                return true;
+                result.Success = true;
+                return result;
             }
 
         }
