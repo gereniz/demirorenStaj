@@ -1,0 +1,35 @@
+﻿@model PostIndexModel
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Posts";
+}
+<title>Posts</title>
+<br />
+<br />
+<br />
+<a href="/Post/Create" class="btn btn-primary">Create</a>
+<br />
+<br />
+<form action="Search?Word=" method="get">
+    @Html.TextAreaFor(Model => Model.Word, new { @cols = 130, @rows = 1, @class = "form-control" })
+    <input type="submit" class="btn btn-primary" value="Search" />
+</form>
+<br />
+<br />
+@foreach (var item in Model.Posts)
+ {
+    @if (item.UserId == Model.UserId)
+     {
+         <h1 >@item.Title</h1>
+         <p>@item.Content</p>
+         <br />
+         <tbody>
+             <tr>
+                 <td> <a href="/Post/Delete/@item.Id" class="btn btn-primary">Delete</a></td>
+                 <td><a href="/Post/Update/@item.Id" class="btn btn-primary" style=" width: 67px; ">Edit</a></td>
+             </tr>
+         </tbody>
+     }
+ }

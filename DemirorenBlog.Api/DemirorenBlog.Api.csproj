@@ -16,6 +16,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DemirorenBlog.Data\DemirorenBlog.Data.csproj" />
+    <ProjectReference Include="..\DemirorenBlog.Domains\DemirorenBlog.Domains.csproj" />
+    <ProjectReference Include="..\DemirorenBlog.Models\DemirorenBlog.Models.csproj" />
+    <ProjectReference Include="..\DemirorenBlog.Services\DemirorenBlog.Services.csproj" />
+    <ProjectReference Include="..\DemirorenBlog.Web\DemirorenBlog.Web.csproj" />
   </ItemGroup>
 
 </Project>

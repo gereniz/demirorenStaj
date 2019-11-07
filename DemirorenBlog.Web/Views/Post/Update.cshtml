@@ -1,0 +1,32 @@
+﻿@model PostResponseModel
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Update";
+}
+<title>Update</title>
+<form action="/Post/Update/@Model.Post.Id" method="post">
+    <br />
+    <label>Title</label>
+    <br />
+    @Html.TextAreaFor(Model => Model.Post.Title, new { @cols = 130, @rows = 2, @class = "form-control" })
+    <br />
+    <br />
+    <label>Content</label>
+    <br />
+    <br />
+    @Html.TextAreaFor(Model => Model.Post.Content, new { @cols = 130, @rows = 20, @class = "form-control" })
+    <br />
+    <br />
+    @Html.DropDownListFor(Model => Model.Category.Id,
+   (new List<SelectListItem>()
+   { new SelectListItem { Text = "Education",  Value = "1" },
+       new SelectListItem { Text = "Agenda",  Value = "2" },
+       new SelectListItem { Text = "Magazine", Value = "3" } }),
+   new { @cols = 130, @rows = 1, @class = "form-control" })
+    <input type="submit" class="btn btn-primary" value="Update" />
+</form>
+
+
+

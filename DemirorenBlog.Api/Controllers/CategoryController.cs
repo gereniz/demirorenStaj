@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using DemirorenBlog.Api.Models.CategoryModels;
 using DemirorenBlog.Data;
 using DemirorenBlog.Domains.Domain;
+using DemirorenBlog.Models.CategoryModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemirorenBlog.Api.Controllers
@@ -13,70 +11,63 @@ namespace DemirorenBlog.Api.Controllers
     public class CategoryController : Controller
     {
         private readonly DomainContext _domainContext;
-
+        
         public CategoryController(DomainContext domainContext)
         {
             _domainContext = domainContext;
         }
 
-        public bool Index()
-        {
-
-            return true;
-        }
-
-
         [HttpPost]
-        public bool Create(CategoryVievModel model)
+        public bool Create([FromBody] CategoryViewModel model)
         {
             var category = new Category();
             category.Name = model.Name;
 
-            _domainContext.Categories.Add(category);
+            _domainContext.Category.Add(category);
             _domainContext.SaveChanges();
 
-
-
-
             return true;
-
         }
-
-
-        public List<Category> List()
+       
+        public List<CategoryViewModel> List()
         {
 
-            var categories = _domainContext.Categories.ToList();
+            var data = _domainContext.Category.ToList();
+            var model = data.Select(x =>
+            {
+                return new CategoryViewModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                };
+            }).ToList();
 
-            return categories;
+            return model;
         }
 
         [HttpDelete("{id}")]
         [Route("api/[controller]/[action]/{id}")]
         public bool Delete(int id)
         {
-            var model = _domainContext.Categories.FirstOrDefault(p => p.Id == id);
+            var model = _domainContext.Category.FirstOrDefault(c => c.Id == id);
             if (model == null)
             {
                 return false;
             }
             else
             {
-                _domainContext.Categories.Remove(model);
+                _domainContext.Category.Remove(model);
                 _domainContext.SaveChanges();
                 return true;
-
-
             }
         }
 
         [Route("api/[controller]/[action]/ {id}")]
         [HttpPut("{id}")]
 
-        public bool Update(int id, [FromBody] CategoryVievModel model)
+        public bool Update(int id, [FromBody] CategoryViewModel model)
         {
-
-            var categories = _domainContext.Categories.FirstOrDefault(p => p.Id == id);
+            var categories = _domainContext.Category.FirstOrDefault(c => c.Id == id);
             if (model == null)
             {
                 return false;
@@ -88,7 +79,6 @@ namespace DemirorenBlog.Api.Controllers
                 _domainContext.SaveChanges();
                 return true;
             }
-
         }
     }
 }

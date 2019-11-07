@@ -1,0 +1,40 @@
+﻿@model PostResponseModel
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "New Text";
+}
+<head runat ="server">
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+</head>
+<title>New Text</title>
+<br />
+<br />
+<form action="/Post/Create/" method="post">
+    <label>Başlık</label>
+    <br />
+    @Html.TextAreaFor(Model => Model.Post.Title, new { @cols = 130, @rows = 1, @class = "form-control"}) <br />
+    <br />
+    <label>İçerik</label>
+    <br />
+    <br />
+    @Html.TextAreaFor(Model => Model.Post.Content, new { @cols = 130, @rows = 50, @class = "form-control", @id = "editor" })
+    <br />
+    <br />
+    <label>Category</label>
+    <br />
+    <br />
+    @Html.DropDownListFor(Model => Model.Category.Id,
+    (new List<SelectListItem>() {
+        new SelectListItem { Text = "Education",  Value = "1" },
+        new SelectListItem { Text = "Agenda",  Value = "2" },
+        new SelectListItem { Text = "Magazine", Value = "3" }
+    }),new { @cols = 130, @rows = 1, @class = "form-control" })
+    <br />
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>
+
+<script>
+    var editor = CKEDITOR.replace('editor');
+</script>

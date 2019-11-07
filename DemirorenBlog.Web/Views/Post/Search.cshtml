@@ -1,0 +1,21 @@
+﻿@model PostIndexModel
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Posts";
+}
+<title>Posts</title>
+<br />
+<br />
+<br />
+
+@foreach (var item in Model.Posts)
+{
+    @if (item.UserId == Model.UserId)
+    {
+        <h1>@item.Title</h1>
+        <p>@item.Content</p>
+    }
+}
+

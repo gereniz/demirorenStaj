@@ -9,13 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentations", "Presentations", "{3017ABF6-9BA7-4389-A34A-3FC4D2833A38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemirorenBlog.Data", "DemirorenBlog.Data\DemirorenBlog.Data.csproj", "{66A1E598-AB83-4F35-A433-B72D8F615AF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemirorenBlog.Data", "DemirorenBlog.Data\DemirorenBlog.Data.csproj", "{66A1E598-AB83-4F35-A433-B72D8F615AF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemirorenBlog.Domains", "DemirorenBlog.Domains\DemirorenBlog.Domains.csproj", "{43D10A4C-E489-4CFE-A908-8F3494ED4FFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemirorenBlog.Domains", "DemirorenBlog.Domains\DemirorenBlog.Domains.csproj", "{43D10A4C-E489-4CFE-A908-8F3494ED4FFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemirorenBlog.Services", "DemirorenBlog.Services\DemirorenBlog.Services.csproj", "{B7D432BB-2F55-4DB5-B21A-98A30AD5BBBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemirorenBlog.Services", "DemirorenBlog.Services\DemirorenBlog.Services.csproj", "{B7D432BB-2F55-4DB5-B21A-98A30AD5BBBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemirorenBlog.Api", "DemirorenBlog.Api\DemirorenBlog.Api.csproj", "{C2E4F63B-8807-4EAC-9322-6ADB36822A8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemirorenBlog.Api", "DemirorenBlog.Api\DemirorenBlog.Api.csproj", "{C2E4F63B-8807-4EAC-9322-6ADB36822A8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemirorenBlog.Web", "DemirorenBlog.Web\DemirorenBlog.Web.csproj", "{62DEF960-B1BE-43D8-84B7-774D4B1930E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemirorenBlog.Models", "DemirorenBlog.Models\DemirorenBlog.Models.csproj", "{015E6CEF-297F-403C-A27C-F2F4B683CCF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{C2E4F63B-8807-4EAC-9322-6ADB36822A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2E4F63B-8807-4EAC-9322-6ADB36822A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2E4F63B-8807-4EAC-9322-6ADB36822A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62DEF960-B1BE-43D8-84B7-774D4B1930E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62DEF960-B1BE-43D8-84B7-774D4B1930E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62DEF960-B1BE-43D8-84B7-774D4B1930E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62DEF960-B1BE-43D8-84B7-774D4B1930E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{015E6CEF-297F-403C-A27C-F2F4B683CCF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{015E6CEF-297F-403C-A27C-F2F4B683CCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{015E6CEF-297F-403C-A27C-F2F4B683CCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{015E6CEF-297F-403C-A27C-F2F4B683CCF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +62,8 @@ Global
 		{43D10A4C-E489-4CFE-A908-8F3494ED4FFB} = {159A23FD-4636-4F5A-A74D-5372997F6148}
 		{B7D432BB-2F55-4DB5-B21A-98A30AD5BBBD} = {159A23FD-4636-4F5A-A74D-5372997F6148}
 		{C2E4F63B-8807-4EAC-9322-6ADB36822A8D} = {3017ABF6-9BA7-4389-A34A-3FC4D2833A38}
+		{62DEF960-B1BE-43D8-84B7-774D4B1930E0} = {3017ABF6-9BA7-4389-A34A-3FC4D2833A38}
+		{015E6CEF-297F-403C-A27C-F2F4B683CCF6} = {159A23FD-4636-4F5A-A74D-5372997F6148}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CE57451-3FF9-469F-BA94-888338D360B2}

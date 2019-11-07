@@ -1,0 +1,23 @@
+﻿@model UserViewModel
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Login";
+}
+<title>Login</title>
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+ {
+    <br />
+    @Html.LabelFor(Model => Model.Username)
+    <br />
+    @Html.TextBoxFor(Model => Model.Username, new { placeholder = "enter your username", @class = "form-control" })
+    <br />
+    <br />
+    @Html.LabelFor(Model => Model.Password)
+    <br />
+    @Html.PasswordFor(Model => Model.Password, new { placeholder = "enter your password", @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-primary">Login</button>
+    <br />
+}

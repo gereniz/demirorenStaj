@@ -1,0 +1,17 @@
+﻿@model HomeModel
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Posts";
+}
+<title>Posts</title>
+<br />
+<br />
+<br />
+@foreach (var item in Model.Posts)
+{
+    <h1>@item.Title</h1>
+    <p>@item.Content</p>
+}
+

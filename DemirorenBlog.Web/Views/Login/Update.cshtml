@@ -1,0 +1,35 @@
+﻿@model LoginResponseModel
+@{
+    Layout = "_Layout";
+}
+@{
+    ViewBag.Title = "Account";
+}
+<title>Account</title>
+<form action="/Login/Update/@Model.User.Id" method="post">
+    <br />
+    <label>Name Surname</label>
+    <br />
+    @Html.TextAreaFor(Model => Model.User.Name, new { @cols = 130, @rows = 1, @class = "form-control" })
+    <br />
+    <br />
+    <label>Username</label>
+    <br />
+    @Html.TextAreaFor(Model => Model.User.Username, new { @cols = 130, @rows = 1, @class = "form-control" })
+    <br />
+    <label>Password</label>
+    <br />
+    @Html.PasswordFor(Model => Model.User.Password, new { @cols = 130, @rows = 1, @class = "form-control" })
+    <br />
+    <br />
+    <br />
+    <table>
+        <tr>
+            <td><a href="/Login/Delete/@Model.User.Id" class="btn btn-primary">Delete</a></td>
+            <td><a href="/Login/Logout" class="btn btn-primary">Logout</a></td>
+            <td><input type="submit" class="btn btn-primary" value="Update" /></td>
+        </tr>
+    </table>
+</form>
+
+

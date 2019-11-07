@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DemirorenBlog.Domains.Domain
+﻿namespace DemirorenBlog.Domains.Domain
 {
     public class Category
     {
