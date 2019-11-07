@@ -1,10 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using DemirorenBlog.Data;
 using DemirorenBlog.Domains.Domain;
+using DemirorenBlog.Models.AuthsModel;
 using DemirorenBlog.Models.CategoryModels;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.IdentityModel.Tokens;
 namespace DemirorenBlog.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
@@ -21,6 +26,7 @@ namespace DemirorenBlog.Api.Controllers
         public bool Create([FromBody] CategoryViewModel model)
         {
             var category = new Category();
+            category.Id = model.Id;
             category.Name = model.Name;
 
             _domainContext.Category.Add(category);
@@ -62,9 +68,8 @@ namespace DemirorenBlog.Api.Controllers
             }
         }
 
-        [Route("api/[controller]/[action]/ {id}")]
         [HttpPut("{id}")]
-
+        [Route("api/[controller]/[action]/{id}")]
         public bool Update(int id, [FromBody] CategoryViewModel model)
         {
             var categories = _domainContext.Category.FirstOrDefault(c => c.Id == id);
